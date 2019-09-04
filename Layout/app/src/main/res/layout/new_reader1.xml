@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_copy">
+
+    <ImageView
+        android:id="@+id/tvMenu"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_hamburger_menu_white"
+        app:layout_constraintDimensionRatio="w,34:21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/tvNameActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/most_popular"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imvPerson"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/harriet_welsch" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="337dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="-0.03"
+        android:lineSpacingExtra="12sp"
+        android:text="@string/txt_title"
+        android:textColor="#ffffff"
+        android:textSize="36sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/imvPerson"
+        tools:text="@string/txt_title" />
+
+    <TextView
+        android:id="@+id/tvTravel"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/travelling"
+        android:textColor="#b8e986"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/txtDate"
+        android:textColor="#c7c7cd"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tvTravel"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="7sp"
+        android:text="@string/txtContent"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvTravel" />
+
+    <TextView
+        android:id="@+id/tvComment"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.17"
+        android:text="@string/comment"
+        android:textColor="#8f8e94"
+        android:textSize="10sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rectangle_white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="108dp">
+
+        <TextView
+            android:id="@+id/tvRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.01"
+            android:text="@string/read_article"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/imvNext"
+            android:layout_width="15.7dp"
+            android:layout_height="12dp"
+            app:srcCompat="@drawable/arrow_thin_right_black" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imvDots_3"
+        android:layout_width="29dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:srcCompat="@drawable/ic_dots_3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="715dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="356dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/imvPerson"
+        app:layout_constraintStart_toEndOf="@+id/imvPerson"
+        app:layout_constraintTop_toTopOf="@+id/imvPerson"
+        app:layout_constraintVertical_bias="0.41000003">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="-0.02"
+            android:text="@string/name_person"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="116dp" />
+
+        <TextView
+            android:id="@+id/tvLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#c7c7cd"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="139dp"
+            tools:text="@string/txt_local" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

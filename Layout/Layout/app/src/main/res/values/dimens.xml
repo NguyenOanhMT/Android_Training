@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="log_in">50dp</dimen>
+    <dimen name="left_right">15dp</dimen>
+    <dimen name="button">15dp</dimen>
+    <dimen name="text_size">15sp</dimen>
+    <dimen name="space">10sp</dimen>
+    <dimen name="icon">70sp</dimen>
+</resources>

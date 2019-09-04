@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Create List</string>
+    <string name="name_eat">Khoai tây chiên</string>
+    <string name="price">Giá: 20k</string>
+</resources>
