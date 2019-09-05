@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Manager Student</string>
+
+    <string name="hello">Hello again."\n"Welcome back.</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="show_empty">Once you add some notes\nyou will find it here</string>
+</resources>
