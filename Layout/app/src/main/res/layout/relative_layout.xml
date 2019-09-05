@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/colorBule"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_above="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon"
+            android:src="@drawable/icon_face2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/left_right"
+        android:layout_marginRight="@dimen/left_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/email"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/log_in"
+            android:textColor="@color/colorBlack"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="@dimen/button"/>
+        <EditText
+            android:id="@+id/password"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/log_in"
+            android:textColor="@color/colorBlack"
+            android:background="@color/colorWhite"
+            android:layout_marginBottom="@dimen/button"/>
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="@string/login"
+            android:textColor="@color/colorWhite"
+            android:backgroundTint="@color/colorBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/button"
+            android:textSize="@dimen/text_size"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forget"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/sign_up"
+        android:textColor="@color/colorWhite" />
+
+</RelativeLayout>
