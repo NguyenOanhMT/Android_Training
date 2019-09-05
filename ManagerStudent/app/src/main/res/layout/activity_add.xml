@@ -238,6 +238,4 @@
         android:layout_below="@+id/btn_add"
         android:text="Delete"/>
 
-
-
 </RelativeLayout>

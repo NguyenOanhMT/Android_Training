@@ -11,15 +11,16 @@ import java.util.List;
 public class StudentRepository {
 
     private String DB_NAME = "information_student";
-
     private InforStudentDatabase studentDatabase;
+
     public StudentRepository(Context context) {
         studentDatabase = Room.databaseBuilder(context, InforStudentDatabase.class, DB_NAME).build();
     }
 
-    public void insertTask(String name) {
-
-    }
+//    public void insertTask(String name) {
+////        insertInfor(id, name, date, gender, address, special);
+//
+//    }
     public void insertInfor(int id, String name, String date, String gender,
                             String address, String special) {
 

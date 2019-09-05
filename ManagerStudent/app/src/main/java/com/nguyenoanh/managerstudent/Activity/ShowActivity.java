@@ -10,6 +10,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -36,6 +38,10 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_show);
 
@@ -47,18 +53,18 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, this));
 
         btnAdd = (FloatingActionButton) findViewById (R.id.btn_add);
+        btnAdd.setOnClickListener(this);
 
         emptyView = (TextView) findViewById (R.id.empty_view);
-
         updateTaskList();
 
-        btnAdd.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent (ShowActivity.this, AddActivity.class);
-                startActivity (intent);
-            }
-        });
+//        btnAdd.setOnClickListener (new View.OnClickListener () {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent (ShowActivity.this, AddActivity.class);
+//                startActivity (intent);
+//            }
+//        });
 
     }
 
@@ -68,7 +74,7 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
             public void onChanged(List<InforStudent> list) {
                 if(list.size() > 0) {
                     emptyView.setVisibility (View.GONE);
-                recyclerView.setVisibility(View.VISIBLE);
+                    recyclerView.setVisibility(View.VISIBLE);
                 if (adapter == null) {
                     adapter = new InforStudentAdapter (getApplicationContext (), list);
                     recyclerView.setAdapter(adapter);
