@@ -58,14 +58,6 @@ public class ShowActivity extends AppCompatActivity implements View.OnClickListe
         emptyView = (TextView) findViewById (R.id.empty_view);
         updateTaskList();
 
-//        btnAdd.setOnClickListener (new View.OnClickListener () {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent (ShowActivity.this, AddActivity.class);
-//                startActivity (intent);
-//            }
-//        });
-
     }
 
     private void updateTaskList() {

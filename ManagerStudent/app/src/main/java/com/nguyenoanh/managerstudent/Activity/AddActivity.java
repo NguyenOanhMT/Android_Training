@@ -24,7 +24,7 @@ public class AddActivity extends AppCompatActivity implements CompoundButton.OnC
         View.OnTouchListener ,AppConstants {
 
     TextView tvTitle;
-    Button btnAdd, btnDelete;
+    Button btnAdd;
     ImageView btnClose;
     EditText edtName, edtDate, edtGender, edtAddress, edtSpecial;
 
@@ -40,16 +40,19 @@ public class AddActivity extends AppCompatActivity implements CompoundButton.OnC
 
         initLayout ();
 
-        btnAdd.setOnClickListener(this);
         btnClose.setOnClickListener (this);
+        btnAdd.setOnClickListener(this);
+
         student = (InforStudent) getIntent().getSerializableExtra(AppConstants.INTENT_TASK);
         if(student == null){
             tvTitle.setText ("Add Information");
-            btnAdd.setText ("Add");
+            btnClose.setImageResource (R.drawable.ic_close);
+            btnClose.setTag(R.drawable.ic_close);
         }else{
             tvTitle.setText ("Edit Information");
-            btnAdd.setText ("Delete");
             btnClose.setImageResource (R.drawable.ic_delete);
+            btnClose.setTag(R.drawable.ic_delete);
+
             if(student.getName () != null && !student.getName ().isEmpty()) {
                 edtName.setText(student.getName ());
                 edtName.setSelection(edtName.getText().length());
@@ -71,24 +74,14 @@ public class AddActivity extends AppCompatActivity implements CompoundButton.OnC
                 edtSpecial.setSelection(edtSpecial.getText().length());
             }
         }
-
         AppUtils.openKeyboard(getApplicationContext());
-
-//        btnAdd.setOnClickListener (new View.OnClickListener () {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent (AddActivity.this, ShowActivity.class);
-//                startActivity (intent);
-//            }
-//        });
     }
 
     public void initLayout(){
         tvTitle = (TextView) findViewById (R.id.tv_title);
 
-        btnAdd = (Button) findViewById (R.id.btn_add);
+        btnAdd = (Button) findViewById (R.id.btn_done);
         btnClose = (ImageView) findViewById (R.id.btn_close);
-        btnDelete = (Button) findViewById (R.id.btn_delete);
 
         edtName = (EditText) findViewById (R.id.edt_name);
         edtDate = (EditText) findViewById (R.id.edt_date);
@@ -100,44 +93,44 @@ public class AddActivity extends AppCompatActivity implements CompoundButton.OnC
     @Override
     public void onClick(View view) {
         AppUtils.hideKeyboard(this);
-         if(view == btnAdd) {
-             Intent intent = getIntent ();
-             if (student != null) {
-                 student.setName (edtName.getText ().toString ());
-                 student.setDate (edtDate.getText ().toString ());
-                 student.setGender (edtGender.getText ().toString ());
-                 student.setAddress (edtAddress.getText ().toString ());
-                 student.setSpecial (edtSpecial.getText ().toString ());
-                 intent.putExtra (AppConstants.INTENT_TASK, student);
+        if(view == btnClose) {
+            if((Integer)btnClose.getTag() == R.drawable.ic_delete) {
+                setResult(Activity.RESULT_CANCELED);
 
-             } else {
-                 intent.putExtra (AppConstants.INTENT_NAME, edtName.getText ().toString ());
-                 intent.putExtra (AppConstants.INTENT_DATE, edtDate.getText ().toString ());
-                 intent.putExtra (AppConstants.INTENT_GENDER, edtGender.getText ().toString ());
-                 intent.putExtra (AppConstants.INTENT_ADDRESS, edtAddress.getText ().toString ());
-                 intent.putExtra (AppConstants.INTENT_SPECIAL, edtSpecial.getText ().toString ());
-             }
-             setResult (Activity.RESULT_OK, intent);
-             finish ();
-             overridePendingTransition(R.anim.stay, R.anim.slide_down);
-        }else if(view == btnDelete) {
-             if((Integer)btnDelete.getTag() == R.drawable.ic_add_plus) {
-                 setResult(Activity.RESULT_CANCELED);
+            } else {
+                Intent intent = getIntent();
+                intent.putExtra(AppConstants.INTENT_DELETE, true);
+                intent.putExtra(AppConstants.INTENT_TASK, student);
+                setResult(Activity.RESULT_OK, intent);
+            }
+            finish();
+            overridePendingTransition(R.anim.stay, R.anim.slide_down);
+        } else if(view == btnAdd) {
+            Intent intent = getIntent ();
+            if (student != null) {
+                student.setName (edtName.getText ().toString ());
+                student.setDate (edtDate.getText ().toString ());
+                student.setGender (edtGender.getText ().toString ());
+                student.setAddress (edtAddress.getText ().toString ());
+                student.setSpecial (edtSpecial.getText ().toString ());
+                intent.putExtra (AppConstants.INTENT_TASK, student);
 
-             } else {
-                 Intent intent = getIntent();
-                 intent.putExtra(AppConstants.INTENT_DELETE, true);
-                 intent.putExtra(AppConstants.INTENT_TASK, student);
-                 setResult(Activity.RESULT_OK, intent);
-             }
-             finish();
-             overridePendingTransition(R.anim.stay, R.anim.slide_down);
-         }
+            } else {
+                intent.putExtra (AppConstants.INTENT_NAME, edtName.getText ().toString ());
+                intent.putExtra (AppConstants.INTENT_DATE, edtDate.getText ().toString ());
+                intent.putExtra (AppConstants.INTENT_GENDER, edtGender.getText ().toString ());
+                intent.putExtra (AppConstants.INTENT_ADDRESS, edtAddress.getText ().toString ());
+                intent.putExtra (AppConstants.INTENT_SPECIAL, edtSpecial.getText ().toString ());
+            }
+            setResult (Activity.RESULT_OK, intent);
+            finish ();
+            overridePendingTransition(R.anim.stay, R.anim.slide_down);
+        }
     }
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
-        final int DRAWABLE_RIGHT = 2;
+//        final int DRAWABLE_RIGHT = 1;
         if(event.getAction() == MotionEvent.ACTION_UP) {
             return true;
         }

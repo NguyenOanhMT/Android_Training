@@ -44,9 +44,9 @@ public class InforStudentAdapter extends RecyclerView.Adapter<InforStudentAdapte
         holder.tvName.setText (itemNew.getName ());
         holder.tvDate.setText (itemNew.getDate ());
 
-        holder.tvGender.setText (itemNew.getSpecial ());
-        holder.tvAddress.setText ((itemNew.getAddress ()));
-        holder.tvSpecial.setText (itemNew.getSpecial ());
+//        holder.tvGender.setText (itemNew.getSpecial ());
+//        holder.tvAddress.setText ((itemNew.getAddress ()));
+//        holder.tvSpecial.setText (itemNew.getSpecial ());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
@@ -60,9 +60,9 @@ public class InforStudentAdapter extends RecyclerView.Adapter<InforStudentAdapte
 
             tvName = (TextView) itemView.findViewById (R.id.tv_name);
             tvDate = (TextView) itemView.findViewById (R.id.tv_date);
-            tvGender = (TextView) itemView.findViewById (R.id.tv_gender);
-            tvAddress = (TextView) itemView.findViewById (R.id.tv_address);
-            tvSpecial = (TextView) itemView.findViewById (R.id.tv_special);
+//            tvGender = (TextView) itemView.findViewById (R.id.tv_gender);
+//            tvAddress = (TextView) itemView.findViewById (R.id.tv_address);
+//            tvSpecial = (TextView) itemView.findViewById (R.id.tv_special);
 
             itemView.setOnClickListener (this);
         }
