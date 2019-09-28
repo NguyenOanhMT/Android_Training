@@ -1,6 +1,8 @@
 package com.nguyenoanh.email;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,14 +34,28 @@ public class ItemAccountAdapter extends RecyclerView.Adapter<ItemAccountAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
-        ItemAccount itemNew = list.get (i);
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int i) {
+        final ItemAccount itemNew = list.get (i);
 
         holder.tvIconName.setText (itemNew.getIconName ());
         holder.tvName.setText (itemNew.getName ());
         holder.tvContent.setText (itemNew.getContent ());
         holder.tvTime.setText (itemNew.getTime ());
         holder.cardView.setCardBackgroundColor (ContextCompat.getColor(context,itemNew.getCardView ()));
+
+        holder.itemView.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle ();
+                bundle.putInt ("id", itemNew.getId ());
+                bundle.putString ("name", itemNew.getName ());
+
+                Intent intent = new Intent (context.getApplicationContext (), Sender.class);
+                intent.addFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra ("bundle", bundle);
+                context.startActivity (intent);
+            }
+        });
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{

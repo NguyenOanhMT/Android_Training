@@ -1,13 +1,20 @@
 package com.nguyenoanh.email;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,20 +22,23 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<ItemAccount> list;
-    ItemAccountAdapter adapter;
-    RecyclerView recyclerView;
+    private DrawerLayout drawerLayout;
 
-    FloatingActionButton btnPencil;
-    ImageView imvChecked;
-    ImageView imvClosed;
-    RelativeLayout relativeLayout;
+    private List<ItemAccount> list;
+    private ItemAccountAdapter adapter;
+    private RecyclerView recyclerView;
+
+    private FloatingActionButton btnPencil;
+    private ImageView imvChecked;
+    private ImageView imvClosed;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +89,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity (intent);
             }
         });
+        btnPencil.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (MainActivity.this, Sender.class);
+                startActivity (intent);
+            }
+        });
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
     }
+
 
     public void initLayout(){
         imvClosed = findViewById (R.id.imv_closed);
@@ -87,5 +107,7 @@ public class MainActivity extends AppCompatActivity {
         btnPencil = findViewById (R.id.btn_pencil);
 
         relativeLayout = findViewById (R.id.sender);
+        btnPencil = findViewById (R.id.btn_pencil);
     }
+
 }
