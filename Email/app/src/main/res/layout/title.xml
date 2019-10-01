@@ -1,43 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
-        android:id="@+id/title"
-        android:background="#BD2D2D"
-        android:layout_width="match_parent"
-        android:paddingBottom="10dp"
-        android:layout_height="70dp">
-        <ImageView
-            android:id="@+id/imv_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:paddingStart="20dp"
-            android:src="@drawable/ic_menu_button"
-            android:paddingRight="20dp"
-            android:layout_alignParentLeft="true" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:paddingStart="70dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:textColor="@color/white"
-            android:gravity="center_horizontal"
-            android:text="Inbox" />
-        <ImageView
-            android:id="@+id/imv_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:paddingEnd="20dp"
-            android:src="@drawable/ic_search"
-            android:paddingRight="20dp"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<RelativeLayout
+    android:id="@+id/title"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/color_red"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/dp10"
+    android:layout_height="@dimen/dp70">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold"
+        android:drawablePadding="@dimen/dp20"
+        android:drawableStart="@drawable/ic_menu_button"
+        android:paddingStart="@dimen/dp20"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/inbox" />
+    <ImageView
+        android:id="@+id/imv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/dp20"
+        android:src="@drawable/ic_search"
+        android:paddingRight="@dimen/dp20"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
 </LinearLayout>

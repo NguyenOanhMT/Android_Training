@@ -13,8 +13,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,14 +20,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private DrawerLayout drawerLayout;
 
     private List<ItemAccount> list;
     private ItemAccountAdapter adapter;
@@ -52,18 +47,27 @@ public class MainActivity extends AppCompatActivity {
 
         list = new ArrayList<> ();
 
-        ItemAccount item1 = new ItemAccount (0, "Canada",
-                "String iconName;private String name;private String content;private String time;",
-                "4:30 pm", R.color.dark_blue_grey);
-        ItemAccount item2 = new ItemAccount (0, "ana",
-                "String iconName;private String name;private String content;private String time;",
-                "4:30 pm", R.color.darkish_pink);
-        list.add(item1);
+        ItemAccount item1 = new ItemAccount(0, "Chopper",
+                "Tôi là bác sĩ mà… cứu người là việc đương nhiên phải làm!",
+                "7:20 AM", R.color.dark_blue_grey);
+        ItemAccount item2 = new ItemAccount(1,"Jun",
+                "Ta không cứu Luffy vì nó là em trai cậu, ta cứu cậu ấy vì ta tôn trọng cậu ấy!!!",
+                "3:20 PM", R.color.darkish_pink);
+        ItemAccount item3 = new ItemAccount(2,"Chip",
+                "Anh đợi em được không?",
+                "3:20 PM", R.color.design_default_color_primary);
+
         list.add(item1);
         list.add(item2);
+        list.add(item3);
+        list.add(item1);
+        list.add(item2);
+        list.add(item3);
+        list.add(item1);
         list.add(item2);
         list.add(item1);
-        list.add(item1);
+        list.add(item2);
+        list.add(item3);
         list.add(item1);
         list.add(item2);
 

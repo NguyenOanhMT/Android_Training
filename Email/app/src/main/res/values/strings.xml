@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Email</string>
+
+    <string name="vernon_bradley">vernon_bradley</string>
+    <string name="_5_30_pm">5:30 pm</string>
+    <string name="touch_e_sender_image_to_select_that_conversation">Touch e sender image to select that conversation</string>
+    <string name="inbox">Inbox</string>
+    <string name="create_email">Create Email</string>
+    <string name="from">From</string>
+    <string name="input_email_sender">input email sender</string>
+    <string name="to">To</string>
+    <string name="input_email_receiver">input email receiver</string>
+    <string name="title">Title</string>
+    <string name="write_content_email">Write content email</string>
 </resources>

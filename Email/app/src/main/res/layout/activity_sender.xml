@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/white"
@@ -21,117 +20,117 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:paddingStart="20dp"
+            android:paddingStart="@dimen/dp20"
             android:src="@drawable/ic_left_arrow"
-            android:paddingRight="20dp"
+            android:paddingRight="@dimen/dp20"
             android:layout_alignParentLeft="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/sp20"
             android:textStyle="bold"
-            android:paddingStart="70dp"
+            android:paddingStart="@dimen/dp70"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:textColor="@color/white"
             android:gravity="center_horizontal"
-            android:text="Create Email" />
+            android:text="@string/create_email" />
         <ImageView
             android:id="@+id/imv_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:paddingEnd="20dp"
+            android:paddingEnd="@dimen/dp20"
             android:src="@drawable/ic_send_button"
-            android:paddingRight="20dp"
+            android:paddingRight="@dimen/dp20"
             android:layout_alignParentRight="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/dp60">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:orientation="horizontal"
-            android:layout_marginEnd="5dp">
+            android:layout_marginEnd="@dimen/dp5">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textSize="17sp"
-                android:textColor="#000000"
-                android:text="From" />
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp20"
+                android:textSize="@dimen/sp17"
+                android:textColor="@color/color_black"
+                android:text="@string/from" />
             <EditText
                 android:id="@+id/sender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="input email sender"
+                android:hint="@string/input_email_sender"
                 android:backgroundTint="@android:color/white"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/dark_blue_grey"
-                android:textSize="17sp" />
+                android:textSize="@dimen/sp17" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/dp2"
             android:layout_alignParentBottom="true"
             android:background="@color/white_two" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/dp60">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:orientation="horizontal"
-            android:layout_marginEnd="5dp">
+            android:layout_marginEnd="@dimen/dp5">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="41dp"
                 android:textSize="17sp"
-                android:textColor="#000000"
-                android:text="To" />
+                android:textColor="@color/color_black"
+                android:text="@string/to" />
             <EditText
                 android:id="@+id/receiver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="input email receiver"
+                android:hint="@string/input_email_receiver"
                 android:backgroundTint="@android:color/white"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/dark_blue_grey"
-                android:textSize="17sp" />
+                android:textSize="@dimen/sp17" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/dp2"
             android:layout_alignParentBottom="true"
             android:background="@color/white_two" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="@dimen/dp60">
         <EditText
             android:id="@+id/title_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:hint="Title"
+            android:layout_marginStart="@dimen/dp20"
+            android:hint="@string/title"
             android:backgroundTint="@android:color/white"
             android:layout_centerVertical="true"
             android:textColor="@color/dark_blue_grey"
-            android:textSize="20sp" />
+            android:textSize="@dimen/sp20" />
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="@dimen/dp2"
             android:layout_alignParentBottom="true"
             android:background="@color/white_two" />
     </RelativeLayout>
@@ -140,11 +139,11 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:hint="Write content email"
+        android:layout_marginStart="@dimen/dp20"
+        android:hint="@string/write_content_email"
         android:backgroundTint="@android:color/white"
         android:layout_centerVertical="true"
         android:textColor="@color/dark_blue_grey"
-        android:textSize="20sp" />
+        android:textSize="@dimen/sp20" />
 
 </LinearLayout>

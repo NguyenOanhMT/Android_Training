@@ -11,4 +11,7 @@
     <color name="white">#ffffff</color>
     <color name="white_two">#f2f3fa</color>
     <color name="accent_two">#e9446a</color>
+    <color name="color_red">#BD2D2D</color>
+    <color name="color_black">#000000</color>
+    <color name="color_red_two">#CC1406</color>
 </resources>
